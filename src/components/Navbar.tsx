@@ -34,9 +34,6 @@ const Navbar = () => {
   return (
     <nav className='fixed bottom-4 left-0 right-0 z-50 flex justify-center'>
       <Dock className='items-end pb-3'>
-        <DockItem className='aspect-square rounded-full overflow-hidden bg-white border-2 border-primary shadow-lg'>
-          <img src={obLogo} alt="Olympique Bournazel Logo" className="w-full h-full object-cover" />
-        </DockItem>
         {navItems.map((item, idx) => (
           <div key={idx} onClick={() => scrollToSection(item.href)}>
             <DockItem className='aspect-square rounded-full bg-accent/10 hover:bg-accent/20 transition-colors'>

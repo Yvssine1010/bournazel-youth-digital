@@ -18,7 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,17 +56,25 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 tracking-tight">
-            OLYMPIQUE BOURNAZEL
-            <span className="block text-accent mt-2">CFA</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
+            <span className="bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent drop-shadow-2xl">
+              OLYMPIQUE
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-accent via-white to-white bg-clip-text text-transparent drop-shadow-2xl">
+              BOURNAZEL
+            </span>
+            <span className="block text-accent mt-4 text-6xl md:text-8xl lg:text-9xl font-black italic [text-shadow:_0_0_30px_rgb(46_204_113_/_50%)]">
+              CFA
+            </span>
           </h1>
           
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-4 font-medium">
+          <p className="text-xl md:text-2xl lg:text-3xl text-white mb-4 font-bold tracking-wide uppercase [text-shadow:_0_4px_12px_rgb(0_0_0_/_80%)]">
             Forging Future Talents. Building Character.
           </p>
           
-          <p className="text-lg md:text-xl text-white/80 mb-10">
-            Since 2014
+          <p className="text-lg md:text-xl text-accent font-semibold mb-10 tracking-widest">
+            SINCE 2014
           </p>
 
           <Button
