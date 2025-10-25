@@ -1,38 +1,39 @@
 import { motion } from 'framer-motion';
 import { Trophy, Heart, Users, Target } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { useTranslation } from 'react-i18next';
 import fieldAerial from '@/assets/field-aerial.jpg';
 
 const ClubSection = () => {
+  const { t } = useTranslation();
   const values = [
     {
-      icon: <Trophy className="w-8 h-8" />,
-      title: 'Excellence',
-      description: 'Striving for the highest standards in every aspect of the game',
-    },
-    {
       icon: <Heart className="w-8 h-8" />,
-      title: 'Passion',
-      description: 'Fostering love and enthusiasm for the beautiful game',
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Teamwork',
-      description: 'Building strong bonds and collaboration on and off the pitch',
+      title: t('club.values.passion.title'),
+      description: t('club.values.passion.desc'),
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'Discipline',
-      description: 'Developing character through commitment and dedication',
+      title: t('club.values.discipline.title'),
+      description: t('club.values.discipline.desc'),
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: t('club.values.respect.title'),
+      description: t('club.values.respect.desc'),
+    },
+    {
+      icon: <Trophy className="w-8 h-8" />,
+      title: t('club.values.excellence.title'),
+      description: t('club.values.excellence.desc'),
     },
   ];
 
   const timeline = [
-    { year: '2014', event: 'Club Founded in Bournazel' },
-    { year: '2016', event: 'First Youth Championship Win' },
-    { year: '2019', event: 'Expanded to 6 Age Categories' },
-    { year: '2023', event: 'New Training Facilities Opened' },
-    { year: '2024', event: '120+ Active Players' },
+    { year: '2014', event: t('club.history.2014.desc') },
+    { year: '2016', event: t('club.history.2016.desc') },
+    { year: '2019', event: t('club.history.2019.desc') },
+    { year: '2024', event: t('club.history.2024.desc') },
   ];
 
   return (
@@ -47,11 +48,10 @@ const ClubSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            More Than a Club, We Are a Family
+            {t('club.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            For a decade, we've been dedicated to nurturing young athletes in Bournazel, 
-            teaching the beautiful game through passion, discipline, and respect.
+            {t('club.intro')}
           </p>
         </motion.div>
 
@@ -64,7 +64,7 @@ const ClubSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-primary mb-8">Our Journey</h3>
+            <h3 className="text-3xl font-bold text-primary mb-8">{t('club.history.title')}</h3>
             <div className="space-y-6">
               {timeline.map((item, idx) => (
                 <motion.div
@@ -111,7 +111,7 @@ const ClubSection = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-3xl font-bold text-primary text-center mb-12">Our Core Values</h3>
+          <h3 className="text-3xl font-bold text-primary text-center mb-12">{t('club.values.title')}</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, idx) => (
               <motion.div

@@ -1,0 +1,116 @@
+{
+  "nav": {
+    "home": "Home",
+    "club": "The Club",
+    "registration": "Registration",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "OLYMPIQUE",
+    "title2": "BOURNAZEL",
+    "title3": "CFA",
+    "subtitle": "Forging Future Talents. Building Character.",
+    "since": "SINCE 2014",
+    "cta": "Join Our Team"
+  },
+  "club": {
+    "title": "The Club",
+    "intro": "More than a club, we are a family. For over a decade, we've been dedicated to nurturing young athletes in Bournazel, teaching the beautiful game through passion, discipline, and respect.",
+    "history": {
+      "title": "Our History",
+      "2014": {
+        "title": "Foundation",
+        "desc": "Olympique Bournazel CFA was established with a vision to develop youth football"
+      },
+      "2016": {
+        "title": "First Championship",
+        "desc": "Our U12 team won their first regional championship"
+      },
+      "2019": {
+        "title": "Expansion",
+        "desc": "Opened new training facilities and expanded to 5 age categories"
+      },
+      "2024": {
+        "title": "10 Years Strong",
+        "desc": "Celebrating a decade of excellence and over 200 trained athletes"
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "passion": {
+        "title": "Passion",
+        "desc": "We instill love for the game"
+      },
+      "discipline": {
+        "title": "Discipline",
+        "desc": "Building character on and off the field"
+      },
+      "respect": {
+        "title": "Respect",
+        "desc": "For teammates, opponents, and the sport"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "desc": "Striving for continuous improvement"
+      }
+    }
+  },
+  "registration": {
+    "title": "Registration 2024-2025",
+    "subtitle": "Join our football family and start your journey to excellence",
+    "cta": "Register Now",
+    "categories": {
+      "u7": {
+        "title": "U7 - Micro Football (Born 2018-2019)",
+        "schedule": "Training: Wednesday & Saturday, 2:00 PM - 3:00 PM",
+        "price": "Monthly Fee: 200 MAD"
+      },
+      "u9": {
+        "title": "U9 - Mini Football (Born 2016-2017)",
+        "schedule": "Training: Tuesday & Thursday, 4:00 PM - 5:30 PM",
+        "price": "Monthly Fee: 250 MAD"
+      },
+      "u11": {
+        "title": "U11 - Youth (Born 2014-2015)",
+        "schedule": "Training: Monday, Wednesday & Friday, 4:00 PM - 5:30 PM",
+        "price": "Monthly Fee: 300 MAD"
+      },
+      "u13": {
+        "title": "U13 - Pre-Teens (Born 2012-2013)",
+        "schedule": "Training: Monday, Wednesday & Friday, 5:30 PM - 7:00 PM",
+        "price": "Monthly Fee: 300 MAD"
+      },
+      "u15": {
+        "title": "U15 - Cadets (Born 2010-2011)",
+        "schedule": "Training: Tuesday, Thursday & Saturday, 5:30 PM - 7:00 PM",
+        "price": "Monthly Fee: 350 MAD"
+      }
+    }
+  },
+  "footer": {
+    "clubInfo": {
+      "tagline": "Forging future talents and building character through the beautiful game.",
+      "since": "Since 2014"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "club": "The Club",
+      "registration": "Registration",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
+    "quickMessage": {
+      "title": "Quick Message",
+      "emailPlaceholder": "Your email",
+      "messagePlaceholder": "Your message",
+      "send": "Send Message"
+    },
+    "copyright": "Olympique Bournazel CFA. All rights reserved."
+  }
+}

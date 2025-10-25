@@ -2,9 +2,12 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Send, MessageCircle } from 'l
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useTranslation } from 'react-i18next';
 import obLogo from '@/assets/ob-logo.jpg';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
@@ -20,36 +23,36 @@ const Footer = () => {
               <img src={obLogo} alt="Olympique Bournazel Logo" className="w-16 h-16 rounded-full" />
               <div>
                 <h3 className="font-bold text-xl">O.B. CFA</h3>
-                <p className="text-sm text-primary-foreground/80">Since 2014</p>
+                <p className="text-sm text-primary-foreground/80">{t('footer.clubInfo.since')}</p>
               </div>
             </div>
             <p className="text-primary-foreground/90">
-              Forging future talents and building character through the beautiful game.
+              {t('footer.clubInfo.tagline')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-4">{t('footer.quickLinks.title')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#hero" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Home
+                  {t('footer.quickLinks.home')}
                 </a>
               </li>
               <li>
                 <a href="#club" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  The Club
+                  {t('footer.quickLinks.club')}
                 </a>
               </li>
               <li>
                 <a href="#registration" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Registration
+                  {t('footer.quickLinks.registration')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Contact
+                  {t('footer.quickLinks.contact')}
                 </a>
               </li>
             </ul>
@@ -57,7 +60,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contact Us</h4>
+            <h4 className="font-bold text-lg mb-4">{t('footer.contact.title')}</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
@@ -81,7 +84,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-primary-foreground/90 hover:text-accent transition-colors text-sm"
                 >
-                  WhatsApp
+                  {t('footer.contact.whatsapp')}
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -95,23 +98,23 @@ const Footer = () => {
 
           {/* Quick Contact Form */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Quick Message</h4>
+            <h4 className="font-bold text-lg mb-4">{t('footer.quickMessage.title')}</h4>
             <form onSubmit={handleSubmit} className="space-y-3">
               <Input
                 type="email"
-                placeholder="Your email"
+                placeholder={t('footer.quickMessage.emailPlaceholder')}
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
                 required
               />
               <Textarea
-                placeholder="Your message"
+                placeholder={t('footer.quickMessage.messagePlaceholder')}
                 rows={3}
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 resize-none"
                 required
               />
               <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-white">
                 <Send className="w-4 h-4 mr-2" />
-                Send Message
+                {t('footer.quickMessage.send')}
               </Button>
             </form>
           </div>
@@ -121,7 +124,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/70 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Olympique Bournazel CFA. All rights reserved.
+              © {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className="flex gap-4">
               <a

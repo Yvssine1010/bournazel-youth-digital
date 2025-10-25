@@ -2,38 +2,32 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Calendar, Euro, Users } from 'lucide-react';
+import { Calendar, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import soccerBall from '@/assets/soccer-ball.jpg';
 
 const RegistrationSection = () => {
+  const { t } = useTranslation();
   const ageCategories = [
     {
-      category: 'U7 - U9',
-      ages: '6-8 years',
-      description: 'Introduction to football fundamentals with fun, age-appropriate activities',
-      schedule: 'Wednesdays & Saturdays, 14:00-15:30',
-      price: '€120/year',
+      category: 'U7',
+      key: 'u7',
     },
     {
-      category: 'U10 - U11',
-      ages: '9-10 years',
-      description: 'Building technical skills and understanding of team play',
-      schedule: 'Tuesdays & Saturdays, 16:00-17:30',
-      price: '€140/year',
+      category: 'U9',
+      key: 'u9',
     },
     {
-      category: 'U12 - U13',
-      ages: '11-12 years',
-      description: 'Advanced technique development and tactical awareness',
-      schedule: 'Mondays & Fridays, 17:00-18:30',
-      price: '€160/year',
+      category: 'U11',
+      key: 'u11',
     },
     {
-      category: 'U14 - U15',
-      ages: '13-15 years',
-      description: 'Competitive play with focus on game intelligence and performance',
-      schedule: 'Tuesdays & Thursdays, 18:00-19:30',
-      price: '€180/year',
+      category: 'U13',
+      key: 'u13',
+    },
+    {
+      category: 'U15',
+      key: 'u15',
     },
   ];
 
@@ -53,11 +47,10 @@ const RegistrationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Join the Olympique Bournazel Family
+            {t('registration.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Registration is now open for the 2024-2025 season. 
-            Choose your child's age category and become part of our growing community.
+            {t('registration.subtitle')}
           </p>
         </motion.div>
 
@@ -75,23 +68,20 @@ const RegistrationSection = () => {
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-bold">
-                        {cat.category.split('-')[0].trim()}
+                        {cat.category}
                       </div>
                       <div className="text-left">
-                        <h4 className="font-bold text-lg">{cat.category}</h4>
-                        <p className="text-sm text-muted-foreground">{cat.ages}</p>
+                        <h4 className="font-bold text-lg">{t(`registration.categories.${cat.key}.title`)}</h4>
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-4 space-y-3">
-                    <p className="text-muted-foreground">{cat.description}</p>
                     <div className="flex items-center gap-2 text-sm">
                       <Calendar className="w-4 h-4 text-accent" />
-                      <span>{cat.schedule}</span>
+                      <span>{t(`registration.categories.${cat.key}.schedule`)}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm font-bold text-accent">
-                      <Euro className="w-4 h-4" />
-                      <span>{cat.price}</span>
+                      <span>{t(`registration.categories.${cat.key}.price`)}</span>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -116,19 +106,15 @@ const RegistrationSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent" />
               </div>
               <div className="p-8 bg-card">
-                <h3 className="text-2xl font-bold mb-4 text-primary">Ready to Start?</h3>
+                <h3 className="text-2xl font-bold mb-4 text-primary">{t('registration.cta')}</h3>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <Users className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                    <p className="text-muted-foreground">Join 120+ young players already training with us</p>
+                    <p className="text-muted-foreground">{t('club.history.2024.desc')}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Calendar className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                    <p className="text-muted-foreground">Season starts September 2024</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Euro className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                    <p className="text-muted-foreground">Flexible payment plans available</p>
+                    <p className="text-muted-foreground">2024-2025</p>
                   </div>
                 </div>
                 <Button
@@ -136,7 +122,7 @@ const RegistrationSection = () => {
                   onClick={handleRegistration}
                   className="w-full bg-accent hover:bg-accent/90 text-white font-bold"
                 >
-                  Register Now
+                  {t('registration.cta')}
                 </Button>
               </div>
             </Card>

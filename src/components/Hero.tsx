@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import soccerBall from '@/assets/soccer-ball.jpg';
 import nightMatch from '@/assets/night-match.jpg';
 import cleatBall from '@/assets/cleat-ball.jpg';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
@@ -58,23 +60,23 @@ const Hero = () => {
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
             <span className="bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent drop-shadow-2xl">
-              OLYMPIQUE
+              {t('hero.title1')}
             </span>
             <br />
             <span className="bg-gradient-to-r from-accent via-white to-white bg-clip-text text-transparent drop-shadow-2xl">
-              BOURNAZEL
+              {t('hero.title2')}
             </span>
             <span className="block text-accent mt-4 text-6xl md:text-8xl lg:text-9xl font-black italic [text-shadow:_0_0_30px_rgb(46_204_113_/_50%)]">
-              CFA
+              {t('hero.title3')}
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl lg:text-3xl text-white mb-4 font-bold tracking-wide uppercase [text-shadow:_0_4px_12px_rgb(0_0_0_/_80%)]">
-            Forging Future Talents. Building Character.
+            {t('hero.subtitle')}
           </p>
           
           <p className="text-lg md:text-xl text-accent font-semibold mb-10 tracking-widest">
-            SINCE 2014
+            {t('hero.since')}
           </p>
 
           <Button
@@ -82,7 +84,7 @@ const Hero = () => {
             onClick={scrollToRegistration}
             className="bg-accent hover:bg-accent/90 text-white font-bold text-lg px-8 py-6 rounded-full shadow-xl hover-lift group"
           >
-            Join Our Team
+            {t('hero.cta')}
             <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>

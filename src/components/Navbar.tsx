@@ -1,26 +1,27 @@
 import { Home, Users, ClipboardList, Mail } from 'lucide-react';
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/dock';
-import obLogo from '@/assets/ob-logo.jpg';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const navItems = [
     {
-      title: 'Home',
+      title: t('nav.home'),
       icon: <Home className='h-full w-full text-primary' />,
       href: '#hero',
     },
     {
-      title: 'The Club',
+      title: t('nav.club'),
       icon: <Users className='h-full w-full text-primary' />,
       href: '#club',
     },
     {
-      title: 'Registration',
+      title: t('nav.registration'),
       icon: <ClipboardList className='h-full w-full text-primary' />,
       href: '#registration',
     },
     {
-      title: 'Contact',
+      title: t('nav.contact'),
       icon: <Mail className='h-full w-full text-primary' />,
       href: '#contact',
     },
